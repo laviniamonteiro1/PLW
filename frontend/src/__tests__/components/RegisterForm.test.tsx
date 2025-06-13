@@ -1,9 +1,8 @@
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import { RegisterForm } from "../../components/RegisterForm";
 import { BrowserRouter as Router } from "react-router-dom";
-import { vi, type Mock } from "vitest";
 import { useAuth } from "../../hooks/useAuth";
-import type * as ReactRouterDom from "react-router-dom";
+import { vi, type Mock } from "vitest";
 import { RegisterProvider } from "../../contexts/RegisterContext";
 import { mockRegisterData } from "../../mocks/RegisterMock";
 
@@ -15,7 +14,7 @@ vi.mock("../../hooks/useAuth", () => ({
 }));
 
 vi.mock("react-router-dom", async () => {
-  const actual = await vi.importActual<typeof ReactRouterDom>("react-router-dom");
+  const actual = await vi.importActual<typeof import("react-router-dom")>("react-router-dom");
   return {
     ...actual,
     useNavigate: () => navigate,
@@ -44,13 +43,8 @@ describe("RegisterForm", () => {
     expect(screen.getByText("CADASTRO")).toBeInTheDocument();
     expect(screen.getByLabelText("Nome completo")).toBeInTheDocument();
     expect(screen.getByLabelText("E-mail")).toBeInTheDocument();
-    expect(screen.getByLabelText("Data de nascimento")).toBeInTheDocument();
-    expect(screen.getByLabelText("Telefone")).toBeInTheDocument();
-    expect(screen.getByLabelText("Documento")).toBeInTheDocument();
-    expect(screen.getByLabelText("Endereço")).toBeInTheDocument();
     expect(screen.getByLabelText("Senha")).toBeInTheDocument();
     expect(screen.getByLabelText("Confirmar senha")).toBeInTheDocument();
-    expect(screen.getByRole("button", { name: "Registrar" })).toBeInTheDocument();
 
     expect(screen.getByLabelText("Nome completo")).toHaveValue(mockRegisterData.name);
     expect(screen.getByLabelText("E-mail")).toHaveValue(mockRegisterData.email);

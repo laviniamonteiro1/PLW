@@ -130,6 +130,7 @@ export function RegisterForm() {
           value={formData.password}
           onChange={(e) => updateField("password", e.target.value)}
           required
+          aria-label="Senha"
         />
       </FormGroup>
 
@@ -141,6 +142,7 @@ export function RegisterForm() {
           value={formData.confirmPassword}
           onChange={(e) => updateField("confirmPassword", e.target.value)}
           required
+          aria-label="Confirmar senha"
         />
       </FormGroup>
 
