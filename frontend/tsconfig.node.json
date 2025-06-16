@@ -19,13 +19,7 @@
     "noUnusedParameters": true,
     "erasableSyntaxOnly": true,
     "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true,
-
-    /* Adicione estas linhas para incluir os tipos do Vitest e Jest-DOM */
-    "types": [
-      "vitest/globals",
-      "@testing-library/jest-dom"
-    ]
+    "noUncheckedSideEffectImports": true
   },
   "include": ["vite.config.ts"]
 }
