@@ -1,11 +1,11 @@
 import type { BedroomProps } from "../types/BedroomType";
 
-import quarto1 from "/app/src/assets/images/bedrooms/quarto1.png";
-import quarto2 from "/app/src/assets/images/bedrooms/quarto2.png";
-import quarto3 from "/app/src/assets/images/bedrooms/quarto3.png";
-import quarto4 from "/app/src/assets/images/bedrooms/quarto4.png";
-import quarto5 from "/app/src/assets/images/bedrooms/quarto5.png";
-import quarto6 from "/app/src/assets/images/bedrooms/quarto6.png";
+import quarto1 from "@/assets/images/bedrooms/quarto1.png";
+import quarto2 from "@/assets/images/bedrooms/quarto2.png";
+import quarto3 from "@/assets/images/bedrooms/quarto3.png";
+import quarto4 from "@/assets/images/bedrooms/quarto4.png";
+import quarto5 from "@/assets/images/bedrooms/quarto5.png";
+import quarto6 from "@/assets/images/bedrooms/quarto6.png";
 
 export const quartos: BedroomProps[] = [
   {

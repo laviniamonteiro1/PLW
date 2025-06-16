@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import { BedroomCard } from "../../components/BedroomCard";
-import { quartos } from "/app/src/mocks/BedroomMock";
+import { quartos } from "@/mocks/BedroomMock";
 import { BrowserRouter as Router } from "react-router-dom";
 
 describe("BedroomCard", () => {

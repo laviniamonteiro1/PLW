@@ -1,8 +1,8 @@
 import { render, screen, act } from "@testing-library/react"
-import { BedroomProvider, BedroomContext } from "/app/src/contexts/BedroomContext"
+import { BedroomProvider, BedroomContext } from "@/contexts/BedroomContext"
 import { vi } from "vitest"
 import { useContext } from "react"
-import { quartos as mockQuartos } from "/app/src/mocks/BedroomMock"
+import { quartos as mockQuartos } from "@/mocks/BedroomMock"
 
 vi.useFakeTimers()
 

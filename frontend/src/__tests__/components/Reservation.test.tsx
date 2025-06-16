@@ -1,6 +1,6 @@
 import { render, screen, within } from "@testing-library/react";
 import ReservationComponent from "../../components/Reservation";
-import { reservationMock } from "/app/src/mocks/ReservationMock";
+import { reservationMock } from "@/mocks/ReservationMock";
 
 describe("ReservationComponent", () => {
   it("deve renderizar todas as reservas mockadas corretamente", () => {

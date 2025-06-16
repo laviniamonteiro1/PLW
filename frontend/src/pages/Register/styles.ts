@@ -1,1 +1,1 @@
-export * from "/app/src/components/RegisterForm/styles";
+export * from "@/components/RegisterForm/styles";

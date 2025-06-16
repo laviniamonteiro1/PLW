@@ -1,5 +1,5 @@
 import { renderHook } from "@testing-library/react";
-import { useGoBack } from "/app/src/hooks/useGoBack";
+import { useGoBack } from "@/hooks/useGoBack";
 import { MemoryRouter } from "react-router-dom";
 import { vi, type Mock } from "vitest";
 import * as router from "react-router-dom";

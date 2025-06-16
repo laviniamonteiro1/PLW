@@ -4,7 +4,7 @@ import userEvent from "@testing-library/user-event";
 import AdminReservationCrud from "../../components/AdminReservationCrud/AdminReservationCrud";
 
 
-vi.mock("/app/src/mocks/ReservationMock", () => ({
+vi.mock("@/mocks/ReservationMock", () => ({
   reservationMock: [
     {
       id: "1",

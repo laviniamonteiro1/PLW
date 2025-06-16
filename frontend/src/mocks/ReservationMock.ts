@@ -1,4 +1,4 @@
-import { type Reservation } from '/app/src/types/ReservationType';
+import { type Reservation } from '@/types/ReservationType';
 
 export const reservationMock: Reservation[] = [
   {

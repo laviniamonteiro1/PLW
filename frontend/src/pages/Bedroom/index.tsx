@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { useBedroom } from "/app/src/hooks/useBedroom";
+import { useBedroom } from "@/hooks/useBedroom";
 import { BackButton } from "../../components/BackButton";
 import {
   Container,

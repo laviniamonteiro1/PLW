@@ -1,7 +1,7 @@
 import { render, screen, act } from "@testing-library/react"
-import { RegisterProvider, RegisterContext } from "/app/src/contexts/RegisterContext"
+import { RegisterProvider, RegisterContext } from "@/contexts/RegisterContext"
 import { useContext } from "react"
-import { mockRegisterData } from "/app/src/mocks/RegisterMock"
+import { mockRegisterData } from "@/mocks/RegisterMock"
 
 const TestComponent = () => {
   const context = useContext(RegisterContext)

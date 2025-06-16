@@ -1,6 +1,6 @@
 import { renderHook, act } from "@testing-library/react";
-import { useBedroom } from "/app/src/hooks/useBedroom";
-import { BedroomProvider } from "/app/src/contexts/BedroomContext";
+import { useBedroom } from "@/hooks/useBedroom";
+import { BedroomProvider } from "@/contexts/BedroomContext";
 import { vi } from "vitest";
 
 vi.useFakeTimers();

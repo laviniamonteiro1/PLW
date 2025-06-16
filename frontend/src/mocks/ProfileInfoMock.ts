@@ -1,4 +1,4 @@
-import { type ProfileInfo } from '/app/src/types/ProfileInfoType';
+import { type ProfileInfo } from '@/types/ProfileInfoType';
 
 export const ProfileInfoMock: ProfileInfo = {
   fullName: "Fulana da Silva",

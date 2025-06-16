@@ -1,8 +1,8 @@
 import { render, screen, act } from "@testing-library/react"
-import { AuthProvider, AuthContext } from "/app/src/contexts/AuthContext"
+import { AuthProvider, AuthContext } from "@/contexts/AuthContext"
 import { vi } from "vitest"
 import { useContext } from "react"
-import { mockUsers } from "/app/src/mocks/UserMock"
+import { mockUsers } from "@/mocks/UserMock"
 
 vi.useFakeTimers()
 

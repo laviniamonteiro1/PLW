@@ -1,9 +1,9 @@
 import { describe, it, expect } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import { MemoryRouter, Route, Routes } from 'react-router-dom';
-import Bedroom from '/app/src/pages/Bedroom';
-import { BedroomContext } from '/app/src/contexts/BedroomContext';
-import type { BedroomContextType } from '/app/src/contexts/BedroomContext';
+import Bedroom from '@/pages/Bedroom';
+import { BedroomContext } from '@/contexts/BedroomContext';
+import type { BedroomContextType } from '@/contexts/BedroomContext';
 
 const mockQuarto = {
   id: '1',
@@ -11,7 +11,7 @@ const mockQuarto = {
   description: 'Charmosa suíte com decoração rústico-contemporânea.',
   descriptionLong:
     'Um espaço imerso na natureza com decoração rústica e iluminação aconchegante. Ideal para casais em busca de tranquilidade e conexão com o verde.',
-  image: '/app/src/assets/images/bedrooms/quarto1.png',
+  image: '@/assets/images/bedrooms/quarto1.png',
   price: 'R$ 280,00',
 };
 

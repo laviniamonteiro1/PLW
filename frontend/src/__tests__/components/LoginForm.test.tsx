@@ -1,13 +1,13 @@
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import { LoginForm } from "../../components/LoginForm";
 import { BrowserRouter as Router } from "react-router-dom";
-import { useAuth } from "/app/src/hooks/useAuth";
+import { useAuth } from "@/hooks/useAuth";
 import { vi, type Mock } from 'vitest';
 import type * as ReactRouterDom from "react-router-dom";
 
 const navigate = vi.fn();
 
-vi.mock("/app/src/hooks/useAuth", () => ({
+vi.mock("@/hooks/useAuth", () => ({
   useAuth: vi.fn()
 }));
 

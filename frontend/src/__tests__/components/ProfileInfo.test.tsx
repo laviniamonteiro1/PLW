@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import ProfileInfo from "../../components/ProfileInfo";
-import { ProfileInfoMock } from "/app/src/mocks/ProfileInfoMock";
+import { ProfileInfoMock } from "@/mocks/ProfileInfoMock";
 
 describe("ProfileInfo", () => {
   it("deve renderizar todas as informações do perfil", () => {

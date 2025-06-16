@@ -1,9 +1,9 @@
 "use client";
 
 import { Container } from "./styles";
-import { NavbarSemAvatar } from "/app/src/components/NavbarWithoutAvatar";
-import { Footer } from "/app/src/components/Footer";
-import { LoginForm } from "/app/src/components/LoginForm";
+import { NavbarSemAvatar } from "@/components/NavbarWithoutAvatar";
+import { Footer } from "@/components/Footer";
+import { LoginForm } from "@/components/LoginForm";
 
 export default function Login() {
   return (

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { reservationMock } from '/app/src/mocks/ReservationMock';
+import { reservationMock } from '@/mocks/ReservationMock';
 import { Container, Title, ReservationList, ReservationItem, StatusBadge, DetailsButton, DeleteButton, ButtonContainer, FormContainer, SectionTitle } from './styles';
 
 const AdminReservationCrud: React.FC = () => {

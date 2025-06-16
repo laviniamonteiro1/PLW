@@ -1,5 +1,5 @@
 import React from 'react';
-import { reservationMock } from '/app/src/mocks/ReservationMock';
+import { reservationMock } from '@/mocks/ReservationMock';
 import { Container, Title, ReservationList, ReservationItem, StatusBadge } from './styles';
 
 const ReservationComponent: React.FC = () => {

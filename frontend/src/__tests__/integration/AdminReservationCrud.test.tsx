@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { describe, it, expect} from 'vitest';
 import { MemoryRouter } from 'react-router-dom';
-import AdminPage from '/app/src/pages/AdminReservationCrud';
+import AdminPage from '@/pages/AdminReservationCrud';
 
 describe('AdminPage', () => {
   it('renderiza título e área administrativa', () => {

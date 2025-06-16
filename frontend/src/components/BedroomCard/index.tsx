@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { GridContainer, SCard } from "./styles";
-import { quartos } from "/app/src/mocks/BedroomMock";
+import { quartos } from "@/mocks/BedroomMock";
 
 export function BedroomCard() {
   return (

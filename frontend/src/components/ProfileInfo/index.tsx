@@ -1,5 +1,5 @@
 import React from 'react';
-import { ProfileInfoMock } from '/app/src/mocks/ProfileInfoMock';
+import { ProfileInfoMock } from '@/mocks/ProfileInfoMock';
 
 
 

@@ -1,21 +1,21 @@
 import { describe, it, expect, vi } from 'vitest';
 import { render, screen, fireEvent } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
-import PanelPage from '/app/src/pages/Panel';
+import PanelPage from '@/pages/Panel';
 
-vi.mock('/app/src/hooks/useAuth', () => ({
+vi.mock('@/hooks/useAuth', () => ({
   useAuth: () => ({ login: vi.fn() }),
 }));
 
-vi.mock('/app/src/components/NavbarWithAvatar', () => ({
+vi.mock('@/components/NavbarWithAvatar', () => ({
   NavbarComAvatar: () => <header>Navbar</header>,
 }));
 
-vi.mock('/app/src/components/Footer', () => ({
+vi.mock('@/components/Footer', () => ({
   Footer: () => <footer>Footer</footer>,
 }));
 
-vi.mock('/app/src/components/ProfileInfo', () => ({
+vi.mock('@/components/ProfileInfo', () => ({
   default: () => (
     <div className="profile-details">
       <ul>

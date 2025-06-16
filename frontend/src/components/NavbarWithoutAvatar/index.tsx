@@ -1,6 +1,6 @@
 import { SNavbar } from "./styles";
-import logo from "/app/src/assets/images/LOGO.png";
-import genericAvatar from "/app/src/assets/images/avatars/generic_avatar.png";
+import logo from "@/assets/images/LOGO.png";
+import genericAvatar from "@/assets/images/avatars/generic_avatar.png";
 import { Link } from "react-router-dom";
 
 export function NavbarSemAvatar() {

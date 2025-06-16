@@ -1,1 +1,1 @@
-export * from "/app/src/components/LoginForm/styles";
+export * from "@/components/LoginForm/styles";

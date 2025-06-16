@@ -1,6 +1,6 @@
 import { SNavbar } from "./styles";
-import logo from "/app/src/assets/images/LOGO.png";
-import firstGuest from "/app/src/assets/images/avatars/first_guest.png";
+import logo from "@/assets/images/LOGO.png";
+import firstGuest from "@/assets/images/avatars/first_guest.png";
 import { Link } from "react-router-dom";
 
 

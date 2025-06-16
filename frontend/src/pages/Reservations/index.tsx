@@ -1,8 +1,8 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { NavbarComAvatar } from '/app/src/components/NavbarWithAvatar';
-import { Footer } from '/app/src/components/Footer';
-import ReservationComponent from '/app/src/components/Reservation';
+import { NavbarComAvatar } from '@/components/NavbarWithAvatar';
+import { Footer } from '@/components/Footer';
+import ReservationComponent from '@/components/Reservation';
 import { Container, Button } from './styles';
 
 const ReservationsPage: React.FC = () => {

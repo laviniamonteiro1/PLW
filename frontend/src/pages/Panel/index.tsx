@@ -1,10 +1,10 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import ProfileInfo from '/app/src/components/ProfileInfo';
-import { NavbarComAvatar } from '/app/src/components/NavbarWithAvatar';
-import { Footer } from '/app/src/components/Footer';
+import ProfileInfo from '@/components/ProfileInfo';
+import { NavbarComAvatar } from '@/components/NavbarWithAvatar';
+import { Footer } from '@/components/Footer';
 import { Container, UserHeader, StatusBadge, Section, Button } from './styles';
-import firstGuest from '/app/src/assets/images/avatars/first_guest.png'
+import firstGuest from '@/assets/images/avatars/first_guest.png'
 
 const PanelPage: React.FC = () => {
   const navigate = useNavigate();

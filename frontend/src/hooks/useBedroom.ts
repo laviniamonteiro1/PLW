@@ -1,4 +1,4 @@
 import { useContext } from "react";
-import { BedroomContext } from "/app/src/contexts/BedroomContext";
+import { BedroomContext } from "@/contexts/BedroomContext";
 
 export const useBedroom = () => useContext(BedroomContext);

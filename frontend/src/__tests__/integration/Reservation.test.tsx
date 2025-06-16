@@ -4,17 +4,17 @@ import { BrowserRouter } from "react-router-dom";
 import * as originalReactRouterDom from "react-router-dom";
 import { vi } from "vitest";
 
-vi.mock("/app/src/components/NavbarWithAvatar", () => {
+vi.mock("@/components/NavbarWithAvatar", () => {
   return {
     NavbarComAvatar: () => <div data-testid="navbar"></div>,
   };
 });
 
-vi.mock("/app/src/components/Footer", () => ({
+vi.mock("@/components/Footer", () => ({
   Footer: () => <div data-testid="footer"></div>,
 }));
 
-vi.mock("/app/src/components/Reservation", () => ({
+vi.mock("@/components/Reservation", () => ({
   default: () => <div data-testid="reservation"></div>,
 }));
 
