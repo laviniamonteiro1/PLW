@@ -4,20 +4,6 @@ import { BrowserRouter } from "react-router-dom";
 import * as originalReactRouterDom from "react-router-dom";
 import { vi } from "vitest";
 
-vi.mock("@/components/NavbarWithAvatar", () => {
-  return {
-    NavbarComAvatar: () => <div data-testid="navbar"></div>,
-  };
-});
-
-vi.mock("@/components/Footer", () => ({
-  Footer: () => <div data-testid="footer"></div>,
-}));
-
-vi.mock("@/components/Reservation", () => ({
-  default: () => <div data-testid="reservation"></div>,
-}));
-
 const navigate = vi.fn();
 vi.mock("react-router-dom", async (importOriginal) => {
   const actual = await importOriginal<typeof originalReactRouterDom>();

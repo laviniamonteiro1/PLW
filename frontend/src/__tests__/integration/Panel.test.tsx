@@ -8,7 +8,7 @@ vi.mock('@/hooks/useAuth', () => ({
 }));
 
 vi.mock('@/components/NavbarWithAvatar', () => ({
-  NavbarComAvatar: () => <header>Navbar</header>,
+  NavbarComAvatar: () => <nav>Navbar</nav>,
 }));
 
 vi.mock('@/components/Footer', () => ({
