@@ -39,7 +39,7 @@ export function RouteWeb() {
       <Route
         path="/admin"
         element={
-          <ProtectedRoute requireAdmin>
+          <ProtectedRoute>
             <AdminPage />
           </ProtectedRoute>
         }

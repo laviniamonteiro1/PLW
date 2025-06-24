@@ -25,7 +25,10 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
-    }
+    },
+
+    /* Adicionar a configuração para o vitest */
+    "types": ["vitest/globals"]
   },
   "include": ["src"]
 }
