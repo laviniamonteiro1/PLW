@@ -1,8 +1,8 @@
-import { BrowserRouter } from "react-router-dom"
-import { GlobalStyle } from "./styles/GlobalStyles"
-import { AuthProvider } from "./contexts/AuthContext"
-import { BedroomProvider } from "./contexts/BedroomContext"
-import { RouteWeb } from "./routes"
+import { BrowserRouter } from "react-router-dom";
+import { GlobalStyle } from "./styles/GlobalStyles";
+import { AuthProvider } from "./contexts/AuthContext";
+import { BedroomProvider } from "./contexts/BedroomContext";
+import { RouteWeb } from "./routes";
 
 export function App() {
   return (
@@ -10,9 +10,11 @@ export function App() {
       <GlobalStyle />
       <AuthProvider>
         <BedroomProvider>
+          <div data-testid="route-web">
             <RouteWeb />
+          </div>
         </BedroomProvider>
       </AuthProvider>
     </BrowserRouter>
-  )
+  );
 }

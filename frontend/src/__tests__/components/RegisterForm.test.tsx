@@ -3,7 +3,6 @@ import { RegisterForm } from "../../components/RegisterForm";
 import { BrowserRouter as Router } from "react-router-dom";
 import { useAuth } from "../../hooks/useAuth";
 import { vi, type Mock } from "vitest";
-import { RegisterProvider } from "../../contexts/RegisterContext";
 import { mockRegisterData } from "../../mocks/RegisterMock";
 
 const mockRegister = vi.fn();
@@ -27,31 +26,31 @@ describe("RegisterForm", () => {
     vi.clearAllMocks();
   });
 
-  const renderRegisterFormWithProvider = () => {
+  const renderRegisterForm = () => {
     render(
       <Router>
-        <RegisterProvider>
-          <RegisterForm />
-        </RegisterProvider>
+        <RegisterForm />
       </Router>
     );
   };
 
   it("deve renderizar todos os campos do formulário", () => {
-    renderRegisterFormWithProvider();
+    renderRegisterForm();
+
+    fireEvent.change(screen.getByLabelText("Nome completo"), { target: { value: mockRegisterData.name } });
+    fireEvent.change(screen.getByLabelText("E-mail"), { target: { value: mockRegisterData.email } });
+    fireEvent.change(screen.getByLabelText("Senha"), { target: { value: mockRegisterData.password } });
+    fireEvent.change(screen.getByLabelText("Confirmar senha"), { target: { value: mockRegisterData.confirmPassword } });
 
     expect(screen.getByText("CADASTRO")).toBeInTheDocument();
-    expect(screen.getByLabelText("Nome completo")).toBeInTheDocument();
-    expect(screen.getByLabelText("E-mail")).toBeInTheDocument();
-    expect(screen.getByLabelText("Senha")).toBeInTheDocument();
-    expect(screen.getByLabelText("Confirmar senha")).toBeInTheDocument();
-
     expect(screen.getByLabelText("Nome completo")).toHaveValue(mockRegisterData.name);
     expect(screen.getByLabelText("E-mail")).toHaveValue(mockRegisterData.email);
+    expect(screen.getByLabelText("Senha")).toHaveValue(mockRegisterData.password);
+    expect(screen.getByLabelText("Confirmar senha")).toHaveValue(mockRegisterData.confirmPassword);
   });
 
   it("deve mostrar erro se campos obrigatórios estiverem vazios", async () => {
-    renderRegisterFormWithProvider();
+    renderRegisterForm();
 
     fireEvent.change(screen.getByLabelText("Nome completo"), { target: { value: "" } });
     fireEvent.change(screen.getByLabelText("E-mail"), { target: { value: "" } });
@@ -66,7 +65,7 @@ describe("RegisterForm", () => {
   });
 
   it("deve mostrar erro se as senhas forem diferentes", async () => {
-    renderRegisterFormWithProvider();
+    renderRegisterForm();
 
     fireEvent.change(screen.getByLabelText("Nome completo"), { target: { value: "Fulano Teste" } });
     fireEvent.change(screen.getByLabelText("E-mail"), { target: { value: "fulano.teste@example.com" } });
@@ -82,7 +81,7 @@ describe("RegisterForm", () => {
   it("deve registrar e redirecionar para /panel se tudo estiver correto", async () => {
     mockRegister.mockResolvedValue(undefined);
 
-    renderRegisterFormWithProvider();
+    renderRegisterForm();
 
     fireEvent.change(screen.getByLabelText("Nome completo"), { target: { value: mockRegisterData.name } });
     fireEvent.change(screen.getByLabelText("E-mail"), { target: { value: mockRegisterData.email } });
@@ -104,7 +103,7 @@ describe("RegisterForm", () => {
   it("deve exibir erro se o registro falhar", async () => {
     mockRegister.mockRejectedValue(new Error("Erro no servidor"));
 
-    renderRegisterFormWithProvider();
+    renderRegisterForm();
 
     fireEvent.change(screen.getByLabelText("Nome completo"), { target: { value: mockRegisterData.name } });
     fireEvent.change(screen.getByLabelText("E-mail"), { target: { value: mockRegisterData.email } });

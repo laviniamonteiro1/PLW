@@ -1,7 +1,6 @@
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import { Register } from "../../pages/Register";
 import { BrowserRouter as Router } from "react-router-dom";
-import { RegisterProvider } from "../../contexts/RegisterContext";
 import { useAuth } from "../../hooks/useAuth";
 import { vi, type Mock } from "vitest";
 import { mockRegisterData } from "../../mocks/RegisterMock";
@@ -29,9 +28,7 @@ describe("Register", () => {
   const renderRegisterPage = () => {
     render(
       <Router>
-        <RegisterProvider>
-          <Register />
-        </RegisterProvider>
+        <Register />
       </Router>
     );
   };

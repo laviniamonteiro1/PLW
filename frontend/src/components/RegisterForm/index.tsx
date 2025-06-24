@@ -1,7 +1,6 @@
-import { useState, type FormEvent, useContext } from "react";
+import { useState, type FormEvent } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../hooks/useAuth";
-import { RegisterContext } from "../../contexts/RegisterContext";
 import {
   Form,
   Title,
@@ -11,21 +10,25 @@ import {
   Button,
   ErrorMessage,
 } from "./styles";
+import type { RegisterFormData } from "@/types/RegisterType";
 
 export function RegisterForm() {
-  const registerContext = useContext(RegisterContext);
 
-  if (!registerContext) {
-    throw new Error("RegisterForm must be used within a RegisterProvider");
-  }
-
-  const { formData, updateField, resetForm } = registerContext;
-
+  const [formData, setFormData] = useState<RegisterFormData>({
+    address: '', birthdate: '', confirmPassword: '', document: '', email:'', name:'', password:'', phone:''
+  })
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
   const { register } = useAuth();
   const navigate = useNavigate();
+  const updateField = (field: keyof RegisterFormData, value: string) => {
+    setFormData((prev) => ({ ...prev, [field]: value }))
+  }
+
+  const resetForm = () => {
+    setFormData({address: '', birthdate: '', confirmPassword: '', document: '', email:'', name:'', password:'', phone:''})
+  }
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();

@@ -7,6 +7,7 @@ import { Register } from "../pages/Register";
 import PanelPage from "../pages/Panel";
 import ReservationsPage from "../pages/Reservations";
 import AdminPage from "../pages/AdminReservationCrud";
+import { ProtectedRoute } from "../routes/ProtectedRoutes";
 
 export function RouteWeb() {
   return (
@@ -18,9 +19,31 @@ export function RouteWeb() {
 
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
-      <Route path="/panel" element={<PanelPage />} />
-      <Route path="/reservas" element={<ReservationsPage />} />
-      <Route path="/admin" element={<AdminPage />} />
+
+      <Route
+        path="/panel"
+        element={
+          <ProtectedRoute>
+            <PanelPage />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/reservas"
+        element={
+          <ProtectedRoute>
+            <ReservationsPage />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/admin"
+        element={
+          <ProtectedRoute requireAdmin>
+            <AdminPage />
+          </ProtectedRoute>
+        }
+      />
     </Routes>
   );
 }
