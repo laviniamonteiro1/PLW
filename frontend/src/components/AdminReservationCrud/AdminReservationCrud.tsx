@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { reservationMock } from '@/mocks/ReservationMock';
-import { Container, Title, ReservationList, ReservationItem, StatusBadge, DetailsButton, DeleteButton, ButtonContainer, FormContainer, SectionTitle } from './styles';
+import { Container, Title, ReservationList, ReservationItem, StatusBadge, DetailsButton, DeleteButton, CancelButton, ButtonContainer, FormContainer, SectionTitle } from './styles';
 
 const AdminReservationCrud: React.FC = () => {
   const [reservations, setReservations] = useState(reservationMock);
@@ -11,17 +11,6 @@ const AdminReservationCrud: React.FC = () => {
     checkIn: '',
     checkOut: '',
     status: 'Confirmado' as 'Confirmado' | 'Cancelada' | 'Finalizado',
-    formaPagamento: '',
-    valorTotal: '',
-    adicional: '',
-    politicaCancelamento: '',
-    numeroReserva: '',
-    hotel: '',
-    tipoQuarto: '',
-    contatoHotel: {
-      telefone: '',
-      email: '',
-    },
   });
 
   const handleAddReservation = () => {
@@ -30,12 +19,6 @@ const AdminReservationCrud: React.FC = () => {
       {
         ...formData,
         id: `${reservations.length + 1}`,
-        hotel: formData.hotel || 'Hotel Padrão',
-        tipoQuarto: formData.tipoQuarto || 'Quarto Padrão',
-        contatoHotel: {
-          telefone: formData.contatoHotel.telefone || 'Telefone Padrão',
-          email: formData.contatoHotel.email || 'email@hotel.com',
-        },
       },
     ]);
     setFormData({
@@ -45,17 +28,6 @@ const AdminReservationCrud: React.FC = () => {
       checkIn: '',
       checkOut: '',
       status: 'Confirmado',
-      formaPagamento: '',
-      valorTotal: '',
-      adicional: '',
-      politicaCancelamento: '',
-      numeroReserva: '',
-      hotel: '',
-      tipoQuarto: '',
-      contatoHotel: {
-        telefone: '',
-        email: '',
-      },
     });
   };
 
@@ -81,18 +53,15 @@ const AdminReservationCrud: React.FC = () => {
       checkIn: '',
       checkOut: '',
       status: 'Confirmado',
-      formaPagamento: '',
-      valorTotal: '',
-      adicional: '',
-      politicaCancelamento: '',
-      numeroReserva: '',
-      hotel: '',
-      tipoQuarto: '',
-      contatoHotel: {
-        telefone: '',
-        email: '',
-      },
     });
+  };
+
+  const handleCancelReservation = (id: string) => {
+    setReservations(
+      reservations.map((res) =>
+        res.id === id ? { ...res, status: 'Cancelada' } : res
+      )
+    );
   };
 
   return (
@@ -141,44 +110,6 @@ const AdminReservationCrud: React.FC = () => {
           <option value="Cancelada">Cancelada</option>
           <option value="Finalizado">Finalizado</option>
         </select>
-        <input
-          type="text"
-          placeholder="Hotel"
-          value={formData.hotel}
-          onChange={(e) =>
-            setFormData({ ...formData, hotel: e.target.value })
-          }
-        />
-        <input
-          type="text"
-          placeholder="Tipo de Quarto"
-          value={formData.tipoQuarto}
-          onChange={(e) =>
-            setFormData({ ...formData, tipoQuarto: e.target.value })
-          }
-        />
-        <input
-          type="text"
-          placeholder="Telefone do Hotel"
-          value={formData.contatoHotel.telefone}
-          onChange={(e) =>
-            setFormData({
-              ...formData,
-              contatoHotel: { ...formData.contatoHotel, telefone: e.target.value },
-            })
-          }
-        />
-        <input
-          type="email"
-          placeholder="E-mail do Hotel"
-          value={formData.contatoHotel.email}
-          onChange={(e) =>
-            setFormData({
-              ...formData,
-              contatoHotel: { ...formData.contatoHotel, email: e.target.value },
-            })
-          }
-        />
         <button onClick={formData.id ? handleUpdateReservation : handleAddReservation}>
           {formData.id ? 'Atualizar' : 'Adicionar'}
         </button>
@@ -198,6 +129,10 @@ const AdminReservationCrud: React.FC = () => {
               <DetailsButton onClick={() => handleEditReservation(reservation.id)}>
                 Editar
               </DetailsButton>
+              {/* Botão Cancelar */}
+              <CancelButton onClick={() => handleCancelReservation(reservation.id)}>
+                Cancelar
+              </CancelButton>
               <DeleteButton onClick={() => handleDeleteReservation(reservation.id)}>
                 Apagar
               </DeleteButton>

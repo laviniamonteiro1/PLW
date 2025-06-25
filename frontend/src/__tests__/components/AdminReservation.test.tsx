@@ -35,11 +35,6 @@ describe("AdminReservationCrud", () => {
 
     await user.selectOptions(screen.getByRole("combobox"), "Confirmado");
 
-    await user.type(screen.getByPlaceholderText("Hotel"), "Hotel 2");
-    await user.type(screen.getByPlaceholderText("Tipo de Quarto"), "Deluxe");
-    await user.type(screen.getByPlaceholderText("Telefone do Hotel"), "987654321");
-    await user.type(screen.getByPlaceholderText("E-mail do Hotel"), "hotel2@email.com");
-
     await user.click(screen.getByText("Adicionar"));
 
     expect(screen.getByText("Nova Reserva")).toBeInTheDocument();

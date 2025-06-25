@@ -112,7 +112,22 @@ export const DetailsButton = styled.button`
 `;
 
 export const DeleteButton = styled.button`
-  background-color: #dc3545;
+  background-color: #6c757d; /* Cor cinza */
+  color: black; /* Letra preta */
+  border: none;
+  padding: 6px 12px;
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: #5a6268;
+  }
+`;
+
+export const CancelButton = styled.button`
+  background-color: #dc3545; /* Cor vermelha */
   color: white;
   border: none;
   padding: 6px 12px;
